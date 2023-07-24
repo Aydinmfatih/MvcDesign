@@ -10,6 +10,8 @@ namespace MvcDesign.TagHelpers
         {
             output.TagName = "a";
             output.Attributes.Add("href", $"mailto:{Mail}");
+            output.Content.Append(Display); output.TagName = "a";
+            output.Attributes.Add("href", $"mailto:{Mail}");
             output.Content.Append(Display);
         }
     }
