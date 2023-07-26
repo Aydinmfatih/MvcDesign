@@ -1,0 +1,10 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.MvcTagHelpers
+@model Product
+
+<form asp-action="CreateProduct" asp-controller="Product" method="post">
+    <input type="text" asp-for="ProductName" placeholder="Product Name" />
+    <br />
+    <input type="number" asp-for="Quantity" placeholder="Quantity" />
+    <br />
+    <button>Ürün ekle</button>
+</form>
