@@ -12,7 +12,7 @@ namespace MvcDesign.Controllers
 
         public IActionResult CreateProduct()
         {
-            new Product();
+           var product = new Product();
             return View();
         }
         [HttpPost]
@@ -20,8 +20,8 @@ namespace MvcDesign.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.Message = ModelState.Values.FirstOrDefault(x=>x.ValidationState == Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState.Invalid).Errors[0].ErrorMessage;
-                return null;
+                var messages = ModelState.ToList();
+                return View(model);
             }
             return View();
         }

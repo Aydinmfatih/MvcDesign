@@ -1,8 +1,11 @@
 ﻿@addTagHelper *,Microsoft.AspNetCore.MvcTagHelpers
 @model Product
 <form method="post" asp-action="CreateProduct" asp-controller="Product">
-    <input type="text" asp-for="ProductName" placeholder="ProductName" /> <span asp-validation-for="ProductName"></span>
+    <input type="text" asp-for="ProductName" placeholder="ProductName" />
+    <span asp-validation-for="ProductName"></span>
     <input type="text" asp-for="Quantity" placeholder="Quantity" />
+    <span asp-validation-for="Quantity"></span>
     <input type="email" asp-for="Email" placeholder="Email" />
+    <span asp-validation-for="Email"></span>
     <button>gönder</button>
 </form>
