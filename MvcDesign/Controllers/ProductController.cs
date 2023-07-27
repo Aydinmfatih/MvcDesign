@@ -12,18 +12,16 @@ namespace MvcDesign.Controllers
 
         public IActionResult CreateProduct()
         {
-            var tuple = (new Product(), new User());
+            new Product();
             return View();
         }
         [HttpPost]
-        public IActionResult CreateProduct((Product product, User user) model)
+        public IActionResult CreateProduct(Product model)
         {
-
-
+            
             return View();
         }
       
-
     }
 
 }

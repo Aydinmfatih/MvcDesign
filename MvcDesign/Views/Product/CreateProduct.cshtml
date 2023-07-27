@@ -1,8 +1,8 @@
 ﻿@addTagHelper *,Microsoft.AspNetCore.MvcTagHelpers
-
-@model (Product product ,User user)
-<form asp-action="CreateProduct" asp-controller="Product" method="post">
-    <input type="text" asp-for="product.ProductName" placeholder="Product name" /> <br />
-    <input type="text" asp-for="user.Name" placeholder=" name" /> <br />
-    <button>Gönder</button>
+@model Product
+<form method="post" asp-action="CreateProduct" asp-controller="Product">
+    <input type="text" asp-for="ProductName" placeholder="ProductName" />
+    <input type="text" asp-for="Quantity" placeholder="Quantity" />
+    <input type="email" asp-for="Email" placeholder="Email" />
+    <button>gönder</button>
 </form>
