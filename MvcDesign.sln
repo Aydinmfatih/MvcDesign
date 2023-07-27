@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcDesign", "MvcDesign\MvcDesign.csproj", "{F540519C-16EC-433B-B8F2-2D41BC4CCD6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcDesign", "MvcDesign\MvcDesign.csproj", "{F540519C-16EC-433B-B8F2-2D41BC4CCD6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
