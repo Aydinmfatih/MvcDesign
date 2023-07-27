@@ -10,18 +10,26 @@ namespace MvcDesign.Controllers
             return View();
         }
 
-         public IActionResult CreateProduct( )
+        public IActionResult CreateProduct()
         {
+            var tuple = (new Product(), new User());
             return View();
         }
-        public IActionResult GetData(string a, string b)
+        [HttpPost]
+        public IActionResult CreateProduct((Product product, User user) model)
         {
-            var queryString = Request.QueryString;
-             Request.Query["a"].ToString();
-             Request.Query["b"].ToString();
-            return View();
-        }
 
+
+            return View();
+        }
+      
 
     }
+
 }
+
+
+
+
+
+

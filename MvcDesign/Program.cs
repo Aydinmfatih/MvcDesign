@@ -27,9 +27,12 @@ namespace MvcDesign
             app.UseAuthorization();
 
             app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-
+                //name: "default",
+                //pattern: "{controller=Home}/{action=Index}/{id?}");
+                name: "CustomUrlRoute",
+                pattern: "{controller=Home}/{action=Index}/{a}/{b}/{id}");
+            app.MapDefaultControllerRoute();
+            
             app.Run();
         }
     }
