@@ -6,8 +6,8 @@ namespace MvcDesign.Models.ModelMetaDataTypes
     {
         [Required(ErrorMessage = "Product name Giriniz")]
         [StringLength(100, ErrorMessage = "en fazla 100 karakter giriniz")]
-        public string ProductName { get; set; }
+        public string? ProductName { get; set; }
         [EmailAddress(ErrorMessage = "geçerli bir adres giriniz")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
     }
 }

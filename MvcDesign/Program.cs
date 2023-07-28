@@ -1,3 +1,6 @@
+using FluentValidation.AspNetCore;
+using MvcDesign.Models;
+
 namespace MvcDesign
 {
     public class Program
@@ -7,7 +10,7 @@ namespace MvcDesign
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Product>());
 
             var app = builder.Build();
 
@@ -32,7 +35,7 @@ namespace MvcDesign
                 name: "CustomUrlRoute",
                 pattern: "{controller=Home}/{action=Index}/{a}/{b}/{id}");
             app.MapDefaultControllerRoute();
-            
+
             app.Run();
         }
     }
