@@ -1,5 +1,10 @@
 ﻿@addTagHelper *,Microsoft.AspNetCore.MvcTagHelpers
 @model Product
+<script src="c:\users\aydin\source\repos\mvcdesign\mvcdesign\wwwroot\lib\jquery\dist\jquery.min.js"></script>
+<script src="c:\users\aydin\source\repos\mvcdesign\mvcdesign\wwwroot\lib\jquery-validate\jquery.validate.min.js"></script>
+<script src="c:\users\aydin\source\repos\mvcdesign\mvcdesign\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js"></script>
+
+<div asp-validation-summary="All"></div>
 <form method="post" asp-action="CreateProduct" asp-controller="Product">
     <input type="text" asp-for="ProductName" placeholder="ProductName" />
     <span asp-validation-for="ProductName"></span>
