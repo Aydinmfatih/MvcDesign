@@ -1,4 +1,5 @@
 using FluentValidation.AspNetCore;
+using MvcDesign.Constrains;
 using MvcDesign.Models;
 
 namespace MvcDesign
@@ -11,7 +12,7 @@ namespace MvcDesign
 
             // Add services to the container.
             builder.Services.AddControllersWithViews().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Product>());
-
+            builder.Services.Configure<RouteOptions>(options =>  options.ConstraintMap.Add("custom", typeof(CustomConstrain)));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -29,11 +30,10 @@ namespace MvcDesign
 
             app.UseAuthorization();
 
-            app.MapControllerRoute(
-                //name: "default",
-                //pattern: "{controller=Home}/{action=Index}/{id?}");
-                name: "CustomUrlRoute",
-                pattern: "{controller=Home}/{action=Index}/{a}/{b}/{id}");
+            app.MapControllerRoute("Default3", "{controller=Home}/{action=Index}/{id:int?:custom}/{x?}/{y?}");
+            app.MapControllerRoute("Default", "anasayfa", new { controller = "Home", action = "Index" });
+            
+
             app.MapDefaultControllerRoute();
 
             app.Run();
